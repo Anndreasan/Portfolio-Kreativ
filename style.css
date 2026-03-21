@@ -78,7 +78,7 @@ header h1 span:hover {
     gap: 10px;          /* mellanrum mellan korten */
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 0;   /* vi styr avstånd med storbild */
+    margin-bottom: 40px;   /* vi styr avstånd med storbild */
 }
 
 /* Kort: både bilder och video */
