@@ -24,8 +24,37 @@ header h1 a {
     font: inherit;
 }
 
+h2 {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    margin-top: 40px;
+    margin-bottom: 10px;
+}
+/* --- RESET --- */
+p {
+    margin: 0;
+}
 
-/* Vänster-länkar */
+section {
+    margin: 0;
+    padding: 0;
+}
+
+/* --- TEXT --- */
+.center-text {
+    max-width: 680px;
+    margin: 5px auto;
+    text-align: center;
+    line-height: 1.25;
+}
+
+/* 🔥 AVSTÅND TEXT → BILDER */
+#projects {
+    margin-top: 15px;
+}
+
+/* --- NAV --- */
 .nav-left {
     position: absolute;
     left: 20px;
@@ -36,7 +65,6 @@ header h1 a {
     gap: 10px;
 }
 
-/* Höger-länkar */
 .nav-right {
     position: absolute;
     right: 20px;
@@ -47,7 +75,6 @@ header h1 a {
     gap: 10px;
 }
 
-/* Stil på länkar */
 .nav-left a,
 .nav-right a {
     text-decoration: none;
@@ -62,51 +89,45 @@ header h1 a {
 }
 
 /* --- PROJECTS SECTION --- */
-#projects {
-    margin-top: 150px; /* avstånd från header */
-}
-
-/* Kort-rad */
 .card-row {
     display: flex;
-    gap: 10px;          /* mellanrum mellan korten */
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 40px;   /* vi styr avstånd med storbild */
+    margin-bottom: 40px;
 }
 
-/* Kort: både bilder och video */
+/* Kort */
 .card {
-    flex: 1 1 calc(25% - 10px); /* 4 kort per rad */
+    flex: 1 1 calc(25% - 10px);
     text-align: center;
-    height: 500px;              /* samma höjd för alla kort */
-    overflow: hidden;           /* klipper bort allt som sticker ut */
+    height: 500px;
+    overflow: hidden;
 }
 
-/* Kortets bild */
+/* Bild */
 .card img {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* fyller kortet utan att sträcka */
+    object-fit: cover;
     display: block;
 }
 
-/* Kortets video */
+/* Video */
 .card video {
     width: 100%;
     height: 100%;
-    object-fit: cover;          /* fyller kortet utan att sträcka */
+    object-fit: cover;
     display: block;
 }
 
 /* --- STOR BILD --- */
 .large-image {
     width: 100%;
-    height: 650px;        /* ändra höjd här utan att påverka avståndet */
+    height: 650px;
     overflow: hidden;
 }
 
-/* Bild i stor div */
 .large-image img {
     width: 100%;
     height: 100%;
@@ -114,19 +135,19 @@ header h1 a {
     display: block;
 }
 
-/* Konsekvent avstånd ovanför och under storbilden */
+/* Avstånd mellan block */
 .card-row + .large-image {
-    margin-top: 50px;     /* avstånd från första card-row */
+    margin-top: 40px;
 }
 
 .large-image + .card-row {
-    margin-top: 50px;     /* avstånd från storbild till nästa card-row */
+    margin-top: 40px;
 }
 
-/* --- RESPONSIV LAYOUT --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 900px) {
     .card {
-        flex: 1 1 calc(50% - 10px); /* 2 kort per rad */
+        flex: 1 1 calc(50% - 10px);
     }
 
     header h1 {
@@ -136,7 +157,7 @@ header h1 a {
 
 @media (max-width: 500px) {
     .card {
-        flex: 1 1 100%; /* 1 kort per rad */
+        flex: 1 1 100%;
     }
 
     header h1 {
