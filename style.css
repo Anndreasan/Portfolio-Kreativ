@@ -27,7 +27,7 @@ header h1 a {
 h2 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-weight: 900;
+    font-weight: 600;
     margin-top: 40px;
     margin-bottom: 10px;
 }
@@ -52,6 +52,7 @@ section {
 /* 🔥 AVSTÅND TEXT → BILDER */
 #projects {
     margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 /* --- NAV --- */
@@ -176,4 +177,8 @@ footer {
     padding: 20px;
     background-color: #ffffff;
     font-family: Arial, sans-serif;
+}
+
+body.home #projects {
+    margin-top: 100px;
 }
