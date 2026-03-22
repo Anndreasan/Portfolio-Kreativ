@@ -24,35 +24,41 @@ header h1 a {
     font: inherit;
 }
 
+/* --- RUBRIK --- */
 h2 {
     text-align: center;
     font-family: 'Roboto', sans-serif;
-    font-weight: 600;
+    font-weight: 900;
     margin-top: 40px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
+
 /* --- RESET --- */
 p {
     margin: 0;
 }
 
 section {
-    margin: 0;
+    margin: 40px 0; /* 🔥 samma avstånd över & under ALLA bildblock */
     padding: 0;
 }
 
 /* --- TEXT --- */
 .center-text {
     max-width: 680px;
-    margin: 5px auto;
+    margin: 2px auto;
     text-align: center;
-    line-height: 1.25;
+    line-height: 1.15;
 }
 
-/* 🔥 AVSTÅND TEXT → BILDER */
-#projects {
-    margin-top: 15px;
-    margin-bottom: 15px;
+/* 🔥 extra luft mellan text → bilder */
+.center-text + section {
+    margin-top: 40px;
+}
+
+/* 🔥 extra luft mellan bilder → text */
+section + .center-text {
+    margin-top: 40px;
 }
 
 /* --- NAV --- */
@@ -95,7 +101,7 @@ section {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 40px;
+    margin-bottom: 0; /* 🔥 viktigt – tar bort ojämnt spacing */
 }
 
 /* Kort */
@@ -179,6 +185,7 @@ footer {
     font-family: Arial, sans-serif;
 }
 
-body.home #projects {
+/* 🔥 ENDAST INDEX (extra luft under din stora titel) */
+body.home section:first-of-type {
     margin-top: 100px;
 }
