@@ -101,7 +101,7 @@ section + .center-text {
     gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 0; /* 🔥 viktigt – tar bort ojämnt spacing */
+    margin-bottom: 40px; /* 🔥 viktigt – tar bort ojämnt spacing */
 }
 
 /* Kort */
