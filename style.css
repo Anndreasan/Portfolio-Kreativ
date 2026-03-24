@@ -1,3 +1,11 @@
+/* --- BAS --- */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #000;
+}
+
 /* --- HEADER --- */
 header {
     position: relative;
@@ -9,6 +17,7 @@ header {
     font-family: 'Roboto', sans-serif;
 }
 
+/* STOR RUBRIK (fixad igen) */
 header h1 {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -22,6 +31,37 @@ header h1 a {
     color: inherit;
     text-decoration: none;
     font: inherit;
+}
+
+/* --- NAV (FIXAD TILL KANTER) --- */
+.nav-left {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-right {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-left a,
+.nav-right a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: #0077cc;
 }
 
 /* --- RUBRIK --- */
@@ -39,7 +79,7 @@ p {
 }
 
 section {
-    margin: 40px 0; /* 🔥 samma avstånd över & under ALLA bildblock */
+    margin: 40px 0;
     padding: 0;
 }
 
@@ -51,57 +91,25 @@ section {
     line-height: 1.15;
 }
 
-/* 🔥 extra luft mellan text → bilder */
+/* 🔥 JÄMNT AVSTÅND TEXT ↔ BILDER */
 .center-text + section {
     margin-top: 40px;
 }
 
-/* 🔥 extra luft mellan bilder → text */
 section + .center-text {
     margin-top: 40px;
 }
 
-/* --- NAV --- */
-.nav-left {
-    position: absolute;
-    left: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.nav-right {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.nav-left a,
-.nav-right a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.nav-left a:hover,
-.nav-right a:hover {
-    color: #0077cc;
-}
-
-/* --- PROJECTS SECTION --- */
+/* --- PROJECTS --- */
 .card-row {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 40px; /* 🔥 viktigt – tar bort ojämnt spacing */
+    margin-bottom: 40px;
+
+    /* 🔥 FIX: luft på sidorna */
+    padding: 0 8px;
 }
 
 /* Kort */
@@ -133,7 +141,11 @@ section + .center-text {
     width: 100%;
     height: 650px;
     overflow: hidden;
+    padding: 0 8px; /* luft på vänster/höger */
+    box-sizing: border-box; /* så paddingen räknas in i bredden */
 }
+
+
 
 .large-image img {
     width: 100%;
@@ -149,6 +161,55 @@ section + .center-text {
 
 .large-image + .card-row {
     margin-top: 40px;
+}
+
+/* --- FOOTER --- */
+footer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+}
+
+footer a {
+    position: absolute;
+    right: 20px;
+}
+
+/* --- CONTACT PAGE --- */
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-left {
+    max-width: 500px;
+    line-height: 1.6;
+}
+
+.contact-right {
+    max-width: 250px;
+    text-align: right;
+}
+
+.contact-left p,
+.contact-right p {
+    margin-bottom: 15px;
+}
+
+.contact-right a {
+    text-decoration: none;
+    color: #000;
+}
+
+.contact-right a:hover {
+    text-decoration: underline;
 }
 
 /* --- RESPONSIVE --- */
@@ -175,17 +236,35 @@ section + .center-text {
     .nav-right {
         gap: 5px;
     }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 40px;
+        padding: 40px 20px;
+    }
+
+    .contact-right {
+        text-align: left;
+    }
 }
 
-/* --- FOOTER --- */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #ffffff;
-    font-family: Arial, sans-serif;
-}
-
-/* 🔥 ENDAST INDEX (extra luft under din stora titel) */
+/* 🔥 ENDAST INDEX */
 body.home section:first-of-type {
     margin-top: 100px;
+}
+
+/* --- CONTAINER FÖR CENTRERAD BILD --- */
+.contact-image-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 100px; /* samma “luft” som contact-sidan */
+    margin: 60px 0;
+}
+
+/* själva bilden */
+.contact-image img {
+    width: 100%;
+    max-width: 500px; /* kontrollerar storleken */
+    height: auto;
+    display: block;
 }
