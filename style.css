@@ -268,3 +268,26 @@ body.home section:first-of-type {
     height: auto;
     display: block;
 }
+
+/* --- COMING SOON PAGE --- */
+.coming-soon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    text-align: center;
+}
+
+.coming-text {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.coming-subtext {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #555;
+    max-width: 400px;
+}
